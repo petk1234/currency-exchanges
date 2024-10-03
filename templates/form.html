@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Exchange Rates</title>
+    <style>
+      .flex,
+      body {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+      .flex {
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <h1>Get USD/UAH Exchange Rates</h1>
+      <form action="/" method="get" class="flex">
+        <div>
+          <div>
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required />
+          </div>
+          <br></br>
+          <div>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required />
+          </div>
+        </div>
+        <br></br>
+        <div>
+          <button type="submit">Submit</button>
+          <a href="?clear=true">
+            <button type="button">Clear prev currencies</button>
+          </a>
+        </div>
+      </form>
+    </div>
+    <script>
+      let startDate = new Date().toISOString().split('T')[0];
+      document.getElementById('start_date').value = startDate;
+      document.getElementById('end_date').value = startDate;
+    </script>
+  </body>
+</html>
